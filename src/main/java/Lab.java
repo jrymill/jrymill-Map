@@ -1,5 +1,6 @@
 
 import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Maps are key/value pairs. They are used in situations where we have some value that we'd like
@@ -26,7 +27,8 @@ public class Lab {
      * so here Integer is a wrapper for int.
      */
     public Map<Integer, String> createMap(){
-        return null;
+        Map myHM = new HashMap<Integer,String>();
+        return myHM;
     }
 
     /**
@@ -36,17 +38,18 @@ public class Lab {
      */
     public int getSize(Map<Integer,String> map){
 //        return total number of key/value pairs in the map
-        return 0;
+        return map.size();
     }
 
     /**
      * Insert a key/value pair into a map.
-     * @param map a map to be manipulated.
+     * @param map a  to be manipulated.
      * @param key the key of the new pair.
      * @param value the value of the new pair.
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void addKeyValuePair(Map<Integer,String> map, int key, String value){
+        map.put(key,value);
     }
 
     /**
@@ -56,7 +59,7 @@ public class Lab {
      * @return the value associated with key in map.
      */
     public String getValueFromKey(Map<Integer, String> map, int key){
-        return "";
+        return map.get(key);
     }
 
     /**
@@ -66,6 +69,7 @@ public class Lab {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void removeKeyValuePair(Map<Integer, String> map, int key){
+        map.remove(key);
     }
 
     /**
@@ -76,6 +80,6 @@ public class Lab {
      * @return nothing, pass by reference will cause changes to the list object to be reflected across the program.
      */
     public void overwriteValue(Map<Integer, String> map, int key, String value){
-
+        map.put(key,value);
     }
 }
